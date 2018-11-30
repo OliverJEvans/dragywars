@@ -1,27 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './../views/Home.vue'
+import Home from './../views/Home'
+import League from '../views/League'
+import Results from '../views/Results'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  mode: 'hash',
   routes: [
     {
       path: '/',
-      name: 'home',
       component: Home
     },
     {
-      path: '/add-result',
-      name: 'addresult',
-      component: () => import(/* webpackChunkName: "addresult" */ './../views/AddResult.vue')
+      path: '/league/:leagueId',
+      name: 'League',
+      component: League,
+      props: true
     },
     {
-      path: '/:leagueId',
-      name: 'league',
-      component: () => import(/* webpackChunkName: "league" */ './../views/League.vue')
-    },
+      path: '/league/:leagueId/distance/:distanceId',
+      name: 'Results',
+      component: Results,
+      props: true
+    }
   ]
 })

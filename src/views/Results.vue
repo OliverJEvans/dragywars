@@ -5,6 +5,7 @@
 
     <b-table
       striped
+      :fields="fields"
       :items="results"
       v-if="results" />
 
@@ -39,6 +40,12 @@ export default {
   components: {
     'measurements-nav': MeasurementsNav,
     'submit-times-button': SubmitTimesButton,
+  },
+  computed: {
+    fields() {
+      return ["time", "tuner", "name", "notes"];
+      // return Object.keys(Object.assign({}, ...this.results));
+    }
   },
   firestore() {
     return {

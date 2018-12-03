@@ -49,7 +49,7 @@ export default {
   },
   firestore() {
     return {
-      results: db.collection('leagues/' + this.leagueId + '/distance/' + this.distanceId + '/results/'),
+      results: db.collection('leagues/' + this.leagueId + '/distance/' + this.distanceId + '/results/').orderBy("time", "asc"),
     }
   },
 }

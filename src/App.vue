@@ -16,6 +16,9 @@
               {{league.name}}
             </b-nav-item>
           </b-navbar-nav>
+          <b-navbar-nav pill class="ml-auto">
+            <b-button variant="primary" target="_blank" href="http://m.me/shakster">Get Dragy</b-button>
+          </b-navbar-nav>
         </b-collapse>
       </b-container>
     </b-navbar>

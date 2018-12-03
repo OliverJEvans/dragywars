@@ -2,13 +2,13 @@
   <div>
     <measurements-nav
       v-bind:activeLeagueId="leagueId"/>
-
+      
     <b-table
       striped
       :fields="fields"
       :items="results"
       v-if="results" />
-
+      
     <div
       class="text-center">
       <p

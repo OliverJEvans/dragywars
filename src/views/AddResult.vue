@@ -56,6 +56,19 @@
                 </b-form-input>
             </b-form-group>
 
+            <b-form-group
+                id="notesInputGroup"
+                label="Notes:"
+                label-for="timeInput"
+                description="This is where you'd might want to add any additional modifications such as cooler or no cooler.">
+                <b-form-input id="notesInput"
+                    type="text"
+                    required
+                    v-model="form.notes"
+                    placeholder="Enter notes">
+                </b-form-input>
+            </b-form-group>
+
             <b-button type="submit" variant="primary">Submit</b-button>
         </b-form>
 

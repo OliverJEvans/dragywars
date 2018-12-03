@@ -12,6 +12,7 @@
                     placeholder="Enter name">
                 </b-form-input>
             </b-form-group>
+
             <b-form-group
                 id="tunerInputGroup"
                 label="Tuner:"
@@ -23,6 +24,7 @@
                     placeholder="Enter tuner">
                 </b-form-input>
             </b-form-group>
+
             <b-form-group
                 id="leagueInputGroup"
                 label="League:"
@@ -33,9 +35,10 @@
                     required>
                 </b-form-select>
             </b-form-group>
+
             <b-form-group
                 id="distancesInputGroup"
-                label="League:"
+                label="Distance:"
                 label-for="distancesInput"
                 description="The distances are populated in the dropdown above after selecting a league">
                 <b-form-select id="distancesInput"
@@ -44,6 +47,7 @@
                     required>
                 </b-form-select>
             </b-form-group>
+
             <b-form-group
                 id="timeInputGroup"
                 label="Time:"
@@ -102,12 +106,15 @@ export default {
         return {
             leagues: [],
             distances: [],
+
             selectedDistance: '',
             selectedLeague: '',
+
             form: {
-                name: '',
+                time: '',
                 tuner: '',
-                time: ''
+                name: '',
+                notes: ''
             },
 
             showErrorAlert: false,
@@ -134,7 +141,7 @@ export default {
                 distancesArray.push(distanceObject);
             });
             return distancesArray;
-        }
+        },
     },
     watch: {
         selectedLeague(){

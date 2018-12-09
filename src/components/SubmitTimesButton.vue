@@ -2,7 +2,8 @@
     <b-button
         :variant="variant"
         :size="size"
-        href="mailto:oliverjevans26@gmail.com">
+        target="_blank"
+        href="http://m.me/shakster">
         Submit your times
     </b-button>
 </template>

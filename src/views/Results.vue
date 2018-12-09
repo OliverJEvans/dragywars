@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 class="h4 text-center mb-3">{{ league.name }} Results</h1>
+
     <measurements-nav
       v-bind:activeLeagueId="leagueId"/>
       
@@ -8,7 +10,7 @@
       :fields="fields"
       :items="results"
       v-if="results" />
-      
+
     <div
       class="text-center">
       <p
@@ -30,7 +32,8 @@ export default {
   name: 'league',
   data() {
     return {
-      results: []
+      results: [],
+      league: []
     }
   },
   props: {
@@ -49,6 +52,7 @@ export default {
   },
   firestore() {
     return {
+      league: db.collection('leagues/').doc(this.leagueId),
       results: db.collection('leagues/' + this.leagueId + '/distance/' + this.distanceId + '/results/').orderBy("time", "asc"),
     }
   },

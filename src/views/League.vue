@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 class="h4 text-center mb-3">{{ league.name }} Results</h1>
+
     <measurements-nav
       v-bind:activeLeagueId="leagueId"/>
 

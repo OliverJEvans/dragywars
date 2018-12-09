@@ -30,3 +30,19 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+  .nav-pills {
+    margin: 0 -15px;
+    .nav-item {
+      padding: 0 15px;
+    }
+
+    .nav-link {
+      background-color: rgba(0, 0, 0, 0.03);
+      &.active {
+        background-color: #007bff;
+      }
+    }
+  }
+</style>
+

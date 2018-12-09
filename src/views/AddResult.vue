@@ -67,7 +67,6 @@
                 description="This is where you'd might want to add any additional modifications such as cooler or no cooler.">
                 <b-form-input id="notesInput"
                     type="text"
-                    required
                     v-model="form.notes"
                     placeholder="Enter notes">
                 </b-form-input>

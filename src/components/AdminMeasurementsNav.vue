@@ -3,7 +3,7 @@
         <b-nav-item
           v-for="(distance, index) in distances" 
           v-bind:key="index"
-          v-bind:to="{ name: 'Results', params: { 'distanceId': distance.id }}">
+          v-bind:to="{ name: 'AdminResults', params: { 'distanceId': distance.id }}">
           {{distance.name}}
         </b-nav-item>
     </b-nav>

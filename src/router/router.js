@@ -11,24 +11,33 @@ import AdminLogin from '../views/admin/AdminLogin'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   mode: 'hash',
   routes: [
     {
       path: '/',
-      component: Home
+      component: Home,
+      meta: {
+        title: 'Dragy Wars - MK7 Golf R and S3 Leadboard'
+      }
     },
     {
       path: '/league/:leagueId',
       name: 'League',
       component: League,
-      props: true
+      props: true,
+      meta: {
+        title: 'League - Dragy Wars'
+      }
     },
     {
       path: '/league/:leagueId/distance/:distanceId',
       name: 'Results',
       component: Results,
-      props: true
+      props: true,
+      meta: {
+        title: 'Distance - Dragy Wars'
+      }
     },
     {
       path: '/admin/home',
@@ -68,3 +77,20 @@ export default new Router({
     },
   ]
 })
+
+router.beforeEach(async (to, from, next) => {
+  document.title = to.meta.title
+
+  // This goes through the matched routes from last to first, finding the closest route with a title.
+  // eg. if we have /some/deep/nested/route and /some, /deep, and /nested have titles, nested's will be chosen.
+  const nearestWithTitle = to.matched
+    .slice()
+    .reverse()
+    .find(r => r.meta && r.meta.title);
+  if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
+
+  next();
+});
+
+
+export default router;

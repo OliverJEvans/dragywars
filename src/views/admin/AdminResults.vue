@@ -16,6 +16,7 @@
     </b-alert>
       
     <b-table
+      responsive
       striped
       :fields="fields"
       :items="results"

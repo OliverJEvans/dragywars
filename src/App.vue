@@ -17,7 +17,7 @@
             </b-nav-item>
           </b-navbar-nav>
           <b-navbar-nav pill class="ml-auto">
-            <b-button variant="primary" target="_blank" href="http://m.me/shakster">Get Dragy</b-button>
+            <b-button variant="primary" target="_blank" href="https://boltonmods.co.uk/products/dragy-gps-race-timer-uk">Get Dragy</b-button>
           </b-navbar-nav>
         </b-collapse>
       </b-container>

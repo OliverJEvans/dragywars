@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueFire from 'vuefire'
+import { firestorePlugin } from 'vuefire'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -11,7 +11,7 @@ import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
-Vue.use(VueFire)
+Vue.use(firestorePlugin)
 Vue.use(BootstrapVue);
 
 new Vue({

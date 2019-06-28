@@ -1,9 +1,6 @@
 import firebase from './firebase';
 
 const db = firebase.firestore();
-db.settings({
-  timestampsInSnapshots: true,
-});
 db.enablePersistence()
   .catch(function (err) {
     if (err.code == 'failed-precondition') {
